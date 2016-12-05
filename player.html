@@ -112,6 +112,20 @@
                     </div>
                     <div id="tuesday" class="tab-pane">
                         </br>
+                        <table class="table table-bordered" style="width: 35%;">
+                            <thead>
+                            <tr>
+                                <th>Ώρα</th>
+                                <th>Εκπομπή</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>09:00-10:00</td>
+                                <td>Show</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div id="wednesday" class="tab-pane">
                         </br>
@@ -179,11 +193,28 @@
 </script>
 <!--Schedule stream script-->
 <script type="text/javascript">
-    $("li .tab").click(function() {
+
+    var current = "#monday";
+
+    $("li .tab").click(function(e) {
+
+        var $li = $(e.currentTarget);
+
+        var selector = $li.attr('href');
+        console.log(selector);
+        console.log($(selector));
+        $(current).removeClass("active");
+        $(selector).addClass("active");
+//        $(selector).append("<p>It works</p>");
+
+        //$(".tab-content").find(".active").removeClass("active");
+
         // remove classes from all
         $("li .tab").parent().removeClass("active");
         // add class to the one we clicked
         $(this).parent().addClass("active");
+
+        current = selector;
     });
 </script>
 
