@@ -1,0 +1,9 @@
+{
+  "name": "example-app",
+  "version": "0.0.1",
+  "description": "An example project scaffold using backbone and require",
+  "dependencies": {
+    "express": "^4.14.0",
+    "text": "git://github.com/requirejs/text"
+  }
+}
